@@ -17,6 +17,8 @@ options = ("🏃‍♀️Getting Started",
 
 nav = st.sidebar.selectbox("Choose a section", options, key="nav")
 
+state.nav == "🏃‍♀️Getting Started"
+
 def on_next_click():
     state.nav = options[options.index(state.nav) + 1]
 
