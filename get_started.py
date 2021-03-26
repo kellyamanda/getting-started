@@ -29,15 +29,15 @@ if nav == "Getting Started":
     img_col1, img_col2, img_col3 = st.beta_columns(3)
 
     with img_col1:
-        st.image("images/apps/demo-uber.png", width=250)
+        st.image("images/apps/demo-uber.png", width=225)
         st.write("[Browse NYC Uber data](https://share.streamlit.io/streamlit/demo-uber-nyc-pickups/)")
 
     with img_col2:
-        st.image("images/apps/demo-gan.png", width=250)
+        st.image("images/apps/demo-gan.png", width=225)
         st.write("[Try out a GAN](https://share.streamlit.io/streamlit/demo-face-gan)")
 
     with img_col3:
-        st.image("images/apps/demo-themes.png", width=250)
+        st.image("images/apps/demo-themes.png", width=225)
         st.write("[See theming examples](https://share.streamlit.io/streamlit/theming-showcase/main)")
 
     """
@@ -47,15 +47,15 @@ if nav == "Getting Started":
     template_col1, template_col2, template_col3 = st.beta_columns(3)
 
     with template_col1:
-        st.image("images/apps/basic.png", width=250)
+        st.image("images/apps/basic.png", width=225)
         st.write("[Basic layout with sidebar](https://share.streamlit.io/kellyamanda/templates/main/template_basic.py)")
 
     with template_col2:
-        st.image("images/apps/wide.png", width=250)
+        st.image("images/apps/wide.png", width=225)
         st.write("[Wide mode layout](https://share.streamlit.io/kellyamanda/templates/main/template_wide.py)")
 
     with template_col3:
-        st.image("images/apps/explainer.png", width=250)
+        st.image("images/apps/explainer.png", width=225)
         st.write("[Explanation style layout](https://share.streamlit.io/kellyamanda/templates/main/template_explainer.py)")
 
 
