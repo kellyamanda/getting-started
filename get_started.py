@@ -208,7 +208,7 @@ if nav == options[2]:
 
 if nav == options[3]:
     """
-    # Layout and Theming for your Streamlit app
+    # Layout and Theming for your app
     Now that you've mastered the basic functions, it's time to take your app to the next level by adding layout and themes.
 
     ## Sidebar
