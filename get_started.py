@@ -194,7 +194,7 @@ if state.nav == "🏗 Basic Functions":
 #         result = number * emoji
 #         st.write("You have asked for ",number,"of ", emoji,": ")
 #         st.write(result)
-        number
+        type(number)
         
 
     """
