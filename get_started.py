@@ -189,8 +189,9 @@ if state.nav == "🏗 Basic Functions":
 
     with st.echo():
         number = st.slider("select a number",1,100)
-        emoji = st.selectbox("select emojis",("🍩","🦊","🎈","🐳"), key="emoji")
-        result = number * emoji
+        emoji = st.radio("select emojis",("🍩","🦊","🎈","🐳"))
+#         emoji = st.selectbox("select emojis",("🍩","🦊","🎈","🐳"), key="emoji")
+#         result = number * emoji
         st.write("You have asked for ",number,"of ", emoji,": ")
         st.write(result)
         
