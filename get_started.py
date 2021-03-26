@@ -21,7 +21,7 @@ if nav == "Getting Started":
     Welcome to Streamlit! Streamlit is an open-source framework for easily creating web apps in Python.
     Whether you want to show off your machine learning model, build an advanced analytics app, or create an internal tool, you can quickly make your app with Streamlit.
 
-    Check out some examples and templates or go to [streamlit.io/gallery](streamlit.io/gallery) to browse hundreds of apps and templates.
+    Check out some examples and templates or go to [streamlit.io/gallery](streamlit.io/gallery) to browse many more.
 
     ## Example apps
     """
