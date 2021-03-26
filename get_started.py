@@ -16,13 +16,13 @@ options = ("🏃‍♀️Getting Started",
     "🎈 More Resources")
 
 nav = st.sidebar.selectbox("Choose a section", options, key="nav")
-
-state.nav
 # if state.nav is None:
 #     state.nav = 0
 
 def on_next_click():
     state.nav = options[options.index(state.nav) + 1]
+
+st.write(state.nav)
 
 if state.nav == "🏃‍♀️Getting Started":
     """
