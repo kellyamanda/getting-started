@@ -5,53 +5,53 @@ import altair as alt
 
 st.set_page_config(page_title="Streamlit Getting Started Guide", initial_sidebar_state="expanded")
 
-nav = st.sidebar.selectbox("Choose a section",
-    ("🏃‍♀️Getting Started",
+options = ("🏃‍♀️Getting Started",
     "⬇️ Installing Streamlit",
     "🏗 Basic Functions",
     "🎨 Layout and Themes",
     "🏎 App Performance",
     "🚀 Deploying your App",
-    "🎈 More Resources"))
+    "🎈 More Resources")
 
+nav = st.sidebar.selectbox("Choose a section", options)
+st.sidebar.write(nav)
 
-if nav == "🏃‍♀️Getting Started":
+if nav == options[0]:
     """
     # Getting Started with Streamlit
     Welcome to Streamlit! Streamlit is an open-source framework for easily creating web apps in Python.
     Whether you want to show off your machine learning model, build an advanced analytics app, or create an internal tool, you can quickly make your app with Streamlit.
 
     Check out some examples and templates or go to [streamlit.io/gallery](streamlit.io/gallery) to browse many more.
-
-    ### Example apps
+    ##
     """
 
-    img_col1, img_col2, img_col3 = st.beta_columns(3)
+    # img_col1, img_col2, img_col3 = st.beta_columns(3)
+    #
+    # with img_col1:
+    #     st.image("images/apps/demo-uber.png", width=225)
+    #     st.markdown(
+    #         f'<p align=center><a href="https://share.streamlit.io/streamlit/demo-uber-nyc-pickups/">Browse NYC Uber data</a></p>',
+    #         unsafe_allow_html=True,
+    #     )
+    #
+    # with img_col2:
+    #     st.image("images/apps/demo-gan.png", width=225)
+    #     st.markdown(
+    #         f'<p align=center><a href="https://share.streamlit.io/streamlit/demo-face-gan">Try out a GAN</a></p>',
+    #         unsafe_allow_html=True,
+    #     )
+    #
+    # with img_col3:
+    #     st.image("images/apps/demo-themes.png", width=225)
+    #     st.markdown(
+    #         f'<p align=center><a href="https://share.streamlit.io/streamlit/theming-showcase/main">See theming examples</a></p>',
+    #         unsafe_allow_html=True,
+    #     )
 
-    with img_col1:
-        st.image("images/apps/demo-uber.png", width=225)
-        st.markdown(
-            f'<p align=center><a href="https://share.streamlit.io/streamlit/demo-uber-nyc-pickups/">Browse NYC Uber data</a></p>',
-            unsafe_allow_html=True,
-        )
-
-    with img_col2:
-        st.image("images/apps/demo-gan.png", width=225)
-        st.markdown(
-            f'<p align=center><a href="https://share.streamlit.io/streamlit/demo-face-gan">Try out a GAN</a></p>',
-            unsafe_allow_html=True,
-        )
-
-    with img_col3:
-        st.image("images/apps/demo-themes.png", width=225)
-        st.markdown(
-            f'<p align=center><a href="https://share.streamlit.io/streamlit/theming-showcase/main">See theming examples</a></p>',
-            unsafe_allow_html=True,
-        )
-
-    """
-    ### Templates
-    """
+    # """
+    # ### Templates
+    # """
 
     template_col1, template_col2, template_col3 = st.beta_columns(3)
 
@@ -68,21 +68,26 @@ if nav == "🏃‍♀️Getting Started":
             f'<p align=center><a href="https://share.streamlit.io/kellyamanda/templates/main/template_wide.py">Wide mode layout</a></p>',
             unsafe_allow_html=True,
         )
-
     with template_col3:
-        st.image("images/apps/explainer.png", width=225)
+        st.image("images/apps/demo-themes.png", width=225)
         st.markdown(
-            f'<p align=center><a href="https://share.streamlit.io/kellyamanda/templates/main/template_explainer.py">Explanation style layout</a></p>',
+            f'<p align=center><a href="https://share.streamlit.io/streamlit/theming-showcase/main">Theming examples</a></p>',
             unsafe_allow_html=True,
         )
+    # with template_col3:
+    #     st.image("images/apps/explainer.png", width=225)
+    #     st.markdown(
+    #         f'<p align=center><a href="https://share.streamlit.io/kellyamanda/templates/main/template_explainer.py">Explanation style layout</a></p>',
+    #         unsafe_allow_html=True,
+    #     )
 
     """
-    #
+    ##
     Ready to get set up? Click below for instructions on installing Streamlit. ⬇️
     """
     st.button("Next > Install Streamlit")
 
-if nav == "⬇️ Installing Streamlit":
+if nav == options[1]:
     """
     # Installing the Streamlit library
     ##
@@ -115,7 +120,7 @@ if nav == "⬇️ Installing Streamlit":
     """
     st.button("Next > Basic Functions")
 
-if nav == "🏗 Basic Functions":
+if nav == options[2]:
     """
     # Streamlit's basic functions
     There's a way to do just about anything you want with Streamlit, but here we'll introduce you
@@ -202,7 +207,7 @@ if nav == "🏗 Basic Functions":
     """
     st.button("Next > Layout and Themes")
 
-if nav == "🎨 Layout and Themes":
+if nav == options[3]:
     """
     # Layout and Theming for your Streamlit app
     Now that you've mastered the basic functions, it's time to take your app to the next level by adding layout and themes.
@@ -295,7 +300,7 @@ if nav == "🎨 Layout and Themes":
     """
     st.button("Next > Performance")
 
-if nav == "🏎 App Performance":
+if nav == options[4]:
     """
     # Optimizing for app performance
     Your app looks good but it also needs to load and update quickly. Streamlit apps run just like Python scripts - from top to bottom - which
@@ -348,7 +353,7 @@ if nav == "🏎 App Performance":
     """
     st.button("Next > Deploying your app")
 
-if nav == "🚀 Deploying your App":
+if nav == options[5]:
     """
     # Deploying your App
     You've made an app and now you're ready to share it. Congrats! Streamlit offers a free deployment platform called [Streamlit Sharing](https://streamlit.io/sharing)
@@ -366,7 +371,7 @@ if nav == "🚀 Deploying your App":
     """
     st.button("Next > More Resources")
 
-if nav == "🎈 More Resources":
+if nav == options[6]:
     """
     # More Resources and Inspiration
     Docs
