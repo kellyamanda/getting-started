@@ -1,1 +1,1 @@
-streamlit == streamlit-0.76.0-py2.py3-none-any.whl
+streamlit==streamlit-0.76.0-py2.py3-none-any.whl
