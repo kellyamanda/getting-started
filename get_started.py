@@ -6,6 +6,8 @@ import altair as alt
 st.set_page_config(page_title="Streamlit Getting Started Guide", initial_sidebar_state="expanded")
 
 state = st.get_state()
+if state.selected_index is None:
+    state.selected_index = 0
 
 options = ("🏃‍♀️Getting Started",
     "⬇️ Installing Streamlit",
@@ -187,7 +189,6 @@ if state.nav == "🏗 Basic Functions":
     with st.echo():
         number = st.slider("select a number",1,100)
         emoji = st.selectbox("select emojis",("🍩","🦊","🎈","🐳"))
-        type(number)
         result = number * emoji
         st.write("You have asked for ",number,"of ", emoji,": ")
         st.write(result)
