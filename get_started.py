@@ -14,7 +14,6 @@ options = ("🏃‍♀️Getting Started",
     "🎈 More Resources")
 
 nav = st.sidebar.selectbox("Choose a section", options)
-st.sidebar.write(nav)
 
 if nav == options[0]:
     """
