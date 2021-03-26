@@ -3,19 +3,19 @@ import numpy as np
 import pandas as pd
 import altair as alt
 
-st.set_page_config(page_title="Streamlit Getting Started Guide", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Streamlit Getting Started Guide", initial_sidebar_state="expanded")
 
 nav = st.sidebar.selectbox("Choose a section",
-    ("Getting Started",
-    "Installing Streamlit",
-    "Basic Functions",
-    "Layout and Themes",
-    "App Performance",
-    "Deploying your App",
-    "More Resources"))
+    ("🏃‍♀️Getting Started",
+    "⬇️ Installing Streamlit",
+    "🏗 Basic Functions",
+    "🎨 Layout and Themes",
+    "🏎 App Performance",
+    "🚀 Deploying your App",
+    "🎈 More Resources"))
 
 
-if nav == "Getting Started":
+if nav == "🏃‍♀️Getting Started":
     """
     # Getting Started with Streamlit
     Welcome to Streamlit! Streamlit is an open-source framework for easily creating web apps in Python.
@@ -23,41 +23,58 @@ if nav == "Getting Started":
 
     Check out some examples and templates or go to [streamlit.io/gallery](streamlit.io/gallery) to browse many more.
 
-    ## Example apps
+    ### Example apps
     """
 
     img_col1, img_col2, img_col3 = st.beta_columns(3)
 
     with img_col1:
         st.image("images/apps/demo-uber.png", width=225)
-        st.write("[Browse NYC Uber data](https://share.streamlit.io/streamlit/demo-uber-nyc-pickups/)")
+        st.markdown(
+            f'<p align=center><a href="https://share.streamlit.io/streamlit/demo-uber-nyc-pickups/">Browse NYC Uber data</a></p>',
+            unsafe_allow_html=True,
+        )
 
     with img_col2:
         st.image("images/apps/demo-gan.png", width=225)
-        st.write("[Try out a GAN](https://share.streamlit.io/streamlit/demo-face-gan)")
+        st.markdown(
+            f'<p align=center><a href="https://share.streamlit.io/streamlit/demo-face-gan">Try out a GAN</a></p>',
+            unsafe_allow_html=True,
+        )
 
     with img_col3:
         st.image("images/apps/demo-themes.png", width=225)
-        st.write("[See theming examples](https://share.streamlit.io/streamlit/theming-showcase/main)")
+        st.markdown(
+            f'<p align=center><a href="https://share.streamlit.io/streamlit/theming-showcase/main">See theming examples</a></p>',
+            unsafe_allow_html=True,
+        )
 
     """
-    ## Templates
+    ### Templates
     """
 
     template_col1, template_col2, template_col3 = st.beta_columns(3)
 
     with template_col1:
         st.image("images/apps/basic.png", width=225)
-        st.write("[Basic layout with sidebar](https://share.streamlit.io/kellyamanda/templates/main/template_basic.py)")
+        st.markdown(
+            f'<p align=center><a href="https://share.streamlit.io/kellyamanda/templates/main/template_basic.py">Basic layout with sidebar</a></p>',
+            unsafe_allow_html=True,
+        )
 
     with template_col2:
         st.image("images/apps/wide.png", width=225)
-        st.write("[Wide mode layout](https://share.streamlit.io/kellyamanda/templates/main/template_wide.py)")
+        st.markdown(
+            f'<p align=center><a href="https://share.streamlit.io/kellyamanda/templates/main/template_wide.py">Wide mode layout</a></p>',
+            unsafe_allow_html=True,
+        )
 
     with template_col3:
         st.image("images/apps/explainer.png", width=225)
-        st.write("[Explanation style layout](https://share.streamlit.io/kellyamanda/templates/main/template_explainer.py)")
-
+        st.markdown(
+            f'<p align=center><a href="https://share.streamlit.io/kellyamanda/templates/main/template_explainer.py">Explanation style layout</a></p>',
+            unsafe_allow_html=True,
+        )
 
     """
     #
@@ -65,7 +82,7 @@ if nav == "Getting Started":
     """
     st.button("Next > Install Streamlit")
 
-if nav == "Installing Streamlit":
+if nav == "⬇️ Installing Streamlit":
     """
     # Installing the Streamlit library
     ##
@@ -98,7 +115,7 @@ if nav == "Installing Streamlit":
     """
     st.button("Next > Basic Functions")
 
-if nav == "Basic Functions":
+if nav == "🏗 Basic Functions":
     """
     # Streamlit's basic functions
     There's a way to do just about anything you want with Streamlit, but here we'll introduce you
@@ -137,14 +154,12 @@ if nav == "Basic Functions":
     Check out the docs for [all the charting types](https://docs.streamlit.io/en/stable/api.html?highlight=number_input#display-charts).
     """
     with st.echo():
-
         df = pd.DataFrame(
             np.random.randn(200, 3),
             columns=['a', 'b', 'c'])
 
         st.subheader("Basic line chart")
         st.line_chart(df)
-
         st.subheader("Altair chart")
         c = alt.Chart(df).mark_circle().encode(
             x='a', y='b', size='c', color='c', tooltip=['a', 'b', 'c'])
@@ -187,7 +202,7 @@ if nav == "Basic Functions":
     """
     st.button("Next > Layout and Themes")
 
-if nav == "Layout and Themes":
+if nav == "🎨 Layout and Themes":
     """
     # Layout and Theming for your Streamlit app
     Now that you've mastered the basic functions, it's time to take your app to the next level by adding layout and themes.
@@ -276,11 +291,11 @@ if nav == "Layout and Themes":
 
     """
     #
-    Now that you have a good looking app ✨let's move on to improving your app's performance.
+    Now that you have a great looking app, let's move on to improving your app's performance. 🏎
     """
     st.button("Next > Performance")
 
-if nav == "App Performance":
+if nav == "🏎 App Performance":
     """
     # Optimizing for app performance
     Your app looks good but it also needs to load and update quickly. Streamlit apps run just like Python scripts - from top to bottom - which
@@ -333,7 +348,7 @@ if nav == "App Performance":
     """
     st.button("Next > Deploying your app")
 
-if nav == "Deploying your App":
+if nav == "🚀 Deploying your App":
     """
     # Deploying your App
     You've made an app and now you're ready to share it. Congrats! Streamlit offers a free deployment platform called [Streamlit Sharing](https://streamlit.io/sharing)
@@ -350,3 +365,11 @@ if nav == "Deploying your App":
     Now you're all set! Click forward for more resources and happy Streamlit-ing!  🎈
     """
     st.button("Next > More Resources")
+
+if nav == "🎈 More Resources":
+    """
+    # More Resources and Inspiration
+    Docs
+    Gallery
+    Forum
+    """
