@@ -15,6 +15,8 @@ options = ("🏃‍♀️Getting Started",
     "🚀 Deploying your App",
     "🎈 More Resources")
 
+state.nav = options[0]
+
 nav = st.sidebar.selectbox("Choose a section", options, key="nav")
 
 def on_next_click():
