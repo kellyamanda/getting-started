@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import altair as alt
 
-st.set_page_config(page_title="Streamlit Getting Started Guide", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Streamlit Getting Started Guide", initial_sidebar_state="collapsed")
 
 nav = st.sidebar.selectbox("Choose a section",
     ("Getting Started",
@@ -271,7 +271,7 @@ if nav == "Layout and Themes":
     """
 
     st.code("""
-        st.set_page_config(page_title="Streamlit Getting Started Guide", layout="wide", initial_sidebar_state="collapsed")
+        st.set_page_config(page_title="Streamlit Getting Started Guide", initial_sidebar_state="collapsed")
         """, language="python")
 
     """
