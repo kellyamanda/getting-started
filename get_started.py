@@ -6,8 +6,6 @@ import altair as alt
 st.set_page_config(page_title="Streamlit Getting Started Guide", initial_sidebar_state="expanded")
 
 state = st.get_state()
-if state.selected_index is None:
-    state.selected_index = 0
 
 options = ("🏃‍♀️Getting Started",
     "⬇️ Installing Streamlit",
@@ -18,6 +16,9 @@ options = ("🏃‍♀️Getting Started",
     "🎈 More Resources")
 
 nav = st.sidebar.selectbox("Choose a section", options, key="nav")
+
+if nav.selected_index is None:
+    nav.selected_index = 0
 
 def on_next_click():
     state.nav = options[options.index(state.nav) + 1]
