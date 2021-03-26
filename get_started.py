@@ -4,6 +4,7 @@ import pandas as pd
 import altair as alt
 
 st.set_page_config(page_title="Streamlit Getting Started Guide", initial_sidebar_state="expanded")
+state = st.get_state()
 
 options = ("🏃‍♀️Getting Started",
     "⬇️ Installing Streamlit",
@@ -13,9 +14,13 @@ options = ("🏃‍♀️Getting Started",
     "🚀 Deploying your App",
     "🎈 More Resources")
 
-nav = st.sidebar.selectbox("Choose a section", options)
+nav = st.sidebar.selectbox("Choose a section", options, key="nav")
 
-if nav == options[0]:
+
+def on_next_click():
+    state.nav = options[options.index(state.nav) + 1]
+
+if state.nav == "🏃‍♀️Getting Started":
     """
     # Getting Started with Streamlit
     Welcome to Streamlit! Streamlit is an open-source framework for easily creating web apps in Python.
@@ -84,9 +89,9 @@ if nav == options[0]:
     ##
     Ready to get set up? Click below for instructions on installing Streamlit. ⬇️
     """
-    st.button("Next > Install Streamlit")
+    st.button("Next > Install Streamlit", on_click=on_next_click)
 
-if nav == options[1]:
+if state.nav == "⬇️ Installing Streamlit":
     """
     # Installing the Streamlit library
     ##
@@ -117,9 +122,9 @@ if nav == options[1]:
     #
     Ready to get into the code? Click below to learn about basic Streamlit functions. 🏗
     """
-    st.button("Next > Basic Functions")
+    st.button("Next > Basic Functions", on_click=on_next_click)
 
-if nav == options[2]:
+if state.nav == "🏗 Basic Functions":
     """
     # Streamlit's basic functions
     There's a way to do just about anything you want with Streamlit, but here we'll introduce you
@@ -204,9 +209,9 @@ if nav == options[2]:
     #
     Now that you know the basics, let's get into app layout and customization 🎨
     """
-    st.button("Next > Layout and Themes")
+    st.button("Next > Layout and Themes", on_click=on_next_click)
 
-if nav == options[3]:
+if state.nav == "🎨 Layout and Themes":
     """
     # Layout and Theming for your app
     Now that you've mastered the basic functions, it's time to take your app to the next level by adding layout and themes.
@@ -297,9 +302,10 @@ if nav == options[3]:
     #
     Now that you have a great looking app, let's move on to improving your app's performance. 🏎
     """
-    st.button("Next > Performance")
+    st.button("Next > Performance", on_click=on_next_click)
+        
 
-if nav == options[4]:
+if state.nav == "🏎 App Performance":
     """
     # Optimizing for app performance
     Your app looks good but it also needs to load and update quickly. Streamlit apps run just like Python scripts - from top to bottom - which
@@ -350,9 +356,10 @@ if nav == options[4]:
     #
     If you're app is running well, then now it's time to deploy and share it!  🚀
     """
-    st.button("Next > Deploying your app")
+    st.button("Next > Deploying your app", on_click=on_next_click)
 
-if nav == options[5]:
+
+if state.nav == "🚀 Deploying your App":
     """
     # Deploying your App
     You've made an app and now you're ready to share it. Congrats! Streamlit offers a free deployment platform called [Streamlit Sharing](https://streamlit.io/sharing)
@@ -368,9 +375,10 @@ if nav == options[5]:
 
     Now you're all set! Click forward for more resources and happy Streamlit-ing!  🎈
     """
-    st.button("Next > More Resources")
+    st.button("Next > More Resources", on_click=on_next_click)
 
-if nav == options[6]:
+
+if state.nav == "🎈 More Resources":
     """
     # More Resources and Inspiration
     Docs
